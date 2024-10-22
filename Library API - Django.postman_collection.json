@@ -1,0 +1,726 @@
+{
+	"info": {
+		"_postman_id": "9e18e1ea-2a87-4166-b097-03a216658839",
+		"name": "Library API - Django",
+		"description": "Postman collection for testing Library API built with Django",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38653126"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "GET All Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_access_token>"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/library/books/?page=2&page_size=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "page_size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Book by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_access_token>"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/library/books/4/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"books",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NTYzMzE5LCJpYXQiOjE3Mjc1NjI0MTksImp0aSI6IjBmZGQ4Nzg3YmY2MjQyMTM5ZmRlOGVjMzYzOTZmOGY1IiwidXNlcl9pZCI6Mn0.pHLrANEq2VRrW0va8WU25o80KeILZO3ICB1CMhJdT18",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_access_token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"1984\",\n  \"publication_date\": \"1949-06-08\",\n  \"isbn\": \"9780451524935\",\n  \"authors\": [\n    {\n      \"first_name\": \"George\",\n      \"last_name\": \"Orwell\",\n      \"date_of_birth\": \"1903-06-25\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/library/books/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NTYzMzE5LCJpYXQiOjE3Mjc1NjI0MTksImp0aSI6IjBmZGQ4Nzg3YmY2MjQyMTM5ZmRlOGVjMzYzOTZmOGY1IiwidXNlcl9pZCI6Mn0.pHLrANEq2VRrW0va8WU25o80KeILZO3ICB1CMhJdT18",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_access_token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Animal Farm\",\n  \"publication_date\": \"1945-08-17\",\n  \"isbn\": \"9780451526342\",\n  \"authors\": [\n    {\n      \"first_name\": \"George\",\n      \"last_name\": \"Orwell\",\n      \"date_of_birth\": \"1903-06-25\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/library/books/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"books",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_access_token>"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/library/books/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"books",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "GET All Authors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_access_token>"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/library/authors/?page=2&page_size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"authors",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "page_size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Author by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/authors/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"authors",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NTYzMzE5LCJpYXQiOjE3Mjc1NjI0MTksImp0aSI6IjBmZGQ4Nzg3YmY2MjQyMTM5ZmRlOGVjMzYzOTZmOGY1IiwidXNlcl9pZCI6Mn0.pHLrANEq2VRrW0va8WU25o80KeILZO3ICB1CMhJdT18",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_access_token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"Jane\",\n  \"last_name\": \"Austen\",\n  \"date_of_birth\": \"1775-12-16\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/library/authors/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"authors",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"newuser\",\n    \"password\": \"strongpassword123\",\n    \"password_confirm\": \"strongpassword123\",\n    \"email\": \"newuser@example.com\",\n    \"first_name\": \"New\",\n    \"last_name\": \"User\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/library/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"newuser\",\n    \"password\": \"strongpassword123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/library/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refreshing access token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refresh\": \"<your_refresh_token>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorites",
+			"item": [
+				{
+					"name": "GET Favorite Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOi..."
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/library/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Add to Favorites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"book_id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/library/favorites/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"favorites",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Remove from Favorites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/library/favorites/42/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"favorites",
+								"42",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recommendations",
+			"item": [
+				{
+					"name": "GET Recommended Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/library/recommendations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"recommendations",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "auth search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3NzA5MjU3LCJpYXQiOjE3Mjc3MDgzNTcsImp0aSI6ImM1ZjJjNGIzMmVlZDRkMWRiODViNjk0ZTc4ZTIxN2YxIiwidXNlcl9pZCI6MX0.vO5AlzYkXdextiFO28g2YvRArJRERNWSHtC6wXYXY4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_access_token>"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/library/books/?search=jk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "jk"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/library/books/?search=Harry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"library",
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Harry"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

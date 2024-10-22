@@ -1,0 +1,23 @@
+library_api/
+├── library_api/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── library/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations/
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── scripts/
+│   └── data_migration.py
+├── manage.py
+├── requirements.txt
+└── .gitignore
